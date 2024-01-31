@@ -1,0 +1,27 @@
+const flavors = [
+  "vanilla",
+  "chocolate",
+  "strawberry",
+  "vanilla",
+  "coffee",
+  "pistachio",
+  "strawberry",
+  "strawberry",
+  "chocolate",
+  "chocolate",
+  "pistachio",
+];
+
+const flavorCount = flavors.reduce((acc, curr) => {
+  if (acc[curr]) {
+    // this checks if [curr] is present in acc (in the first loop, if vanilla is present in the empty object acc)
+    acc[curr]++;
+    return acc;
+  } else {
+    acc[curr] = 1;
+    return acc;
+  }
+  // this decides the acc is an empty object ->
+}, {});
+
+console.log(flavorCount);
